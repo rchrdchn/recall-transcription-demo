@@ -1,4 +1,6 @@
-# Google Meet Transcription Demo
+# Google Meet Transcription Bot Demo
+
+![Google Meet Real-Time Transcription Bot](demo.png "Google Meet Real-Time Transcription Bot")
 
 ## About The Project
 
