@@ -1,6 +1,5 @@
 import { formatTimestamp } from "./formatTimestamp";
 
-// Download transcript as a text file
 export const handleDownloadTranscript = (transcripts) => {
   const transcriptText = transcripts
     .map((t) => `[${formatTimestamp(t.timestamp)}] ${t.speaker}: ${t.text}`)

@@ -55,15 +55,15 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               onClick={toggleDarkMode}
               className={`${
                 darkMode
-                  ? "bg-yellow-400 hover:bg-yellow-500 text-black"
-                  : "bg-blue-800 dark:hover:bg-blue-900 text-white"
+                  ? "bg-blue-800 dark:hover:bg-blue-900 text-white"
+                  : "bg-yellow-400 hover:bg-yellow-500 text-black"
               } p-2 rounded-full focus:outline-none transition-colors duration-300`}
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
-                <SunIcon className="h-6 w-6" />
-              ) : (
                 <MoonIcon className="h-6 w-6" />
+              ) : (
+                <SunIcon className="h-6 w-6" />
               )}
             </button>
           </div>
