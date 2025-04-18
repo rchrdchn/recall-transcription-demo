@@ -19,7 +19,7 @@ Set up and run the Google Meet Transcription Demo in minutes.
 
 ### Prerequisites
 - **Recall.ai API Key**: API Key at [recall.ai](https://recall.ai).
-- **ngrok**: To expose the backend - [installation guide](https://ngrok.com)
+- **ngrok**: To expose the backend - [installation guide](https://ngrok.com).
 - **npm**:
 ```bash
 npm intall npm@latest -g
