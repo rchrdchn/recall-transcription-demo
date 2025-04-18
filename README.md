@@ -20,14 +20,19 @@ A simple app to deploy a bot that joins a Google Meet and transcribes it in real
 Set up and run the Google Meet Transcription Demo in minutes.
 
 ### Prerequisites
-- **Recall.ai API Key**: API Key and Webhook endpoint at [Recall.ai](https://recall.ai).
-- **ngrok**: To expose the backend - [installation guide](https://ngrok.com).
 - **npm**:
 ```bash
 npm intall npm@latest -g
 ```
+- **ngrok**: To expose the backend - [installation guide](https://ngrok.com).
+- **Recall.ai**: API Key and Webhook endpoint at [Recall.ai](https://recall.ai).
+
+#### Recall API Key
 
 ![Recall API](frontend/public/api.png "Recall API")
+
+#### Recall Webhook
+
 ![Recall Webhook step 1](frontend/public/webhook1.png "Recall Webhook step 1")
 ![Recall Webhook step 2](frontend/public/webhook2.png "Recall Webhook step 2")
 ![Recall Webhook step 3](frontend/public/webhook3.png "Recall Webhook step 3")
