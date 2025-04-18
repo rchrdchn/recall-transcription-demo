@@ -3,9 +3,13 @@ const config = {
 	content: ["./src/**/*.{html,js}"],
 	darkMode: "class",
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ["Inter", "sans-serif"],
+			},
+		},
 	},
 	plugins: [],
 };
 
-export default config;
+module.exports = config;
