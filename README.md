@@ -1,6 +1,6 @@
 # Google Meet Transcription Bot Demo
 
-![Google Meet Real-Time Transcription Bot](demo.png "Google Meet Real-Time Transcription Bot")
+![Google Meet Real-Time Transcription Bot](frontend/public/demo.png "Google Meet Real-Time Transcription Bot")
 
 ## About The Project
 
