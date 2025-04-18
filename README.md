@@ -5,13 +5,13 @@
 A simple app to deploy a bot that joins a Google Meet and transcribes it in real-time. Built with React, Node.js, and Recall.ai, it’s perfect for developers exploring programmatic transcription for notetaking tools.
 
 ## Tech Stack
-- [**React**](https://react.dev/) - v19.1
-- [**Tailwind**](https://tailwindcss.com/) - v3.4
-- [**Node.js**](https://nodejs.org) - v18+
-- [**Express.js**](https://expressjs.com/) - v5.1
-- [**Axios**](https://axios-http.com/) - v1.8
-- [**Socket.IO**](https://socket.io/) - v4.8
-- [**cors**](https://www.npmjs.com/package/cors) - v2.8
+- [**React**](https://react.dev/)
+- [**Tailwind**](https://tailwindcss.com/)
+- [**Node.js**](https://nodejs.org)
+- [**Express.js**](https://expressjs.com/)
+- [**Axios**](https://axios-http.com/)
+- [**Socket.IO**](https://socket.io/)
+- [**cors**](https://www.npmjs.com/package/cors)
 - [**ngrok**](https://ngrok.com)
 
 ## Get Started
@@ -19,7 +19,7 @@ Set up and run the Google Meet Transcription Demo in minutes.
 
 ### Prerequisites
 - **Recall.ai API Key**: API Key at [recall.ai](https://recall.ai).
-- **ngrok**: To expose the backend [installation guide](https://ngrok.com)
+- **ngrok**: To expose the backend - [installation guide](https://ngrok.com)
 - **npm**:
 ```bash
 npm intall npm@latest -g
