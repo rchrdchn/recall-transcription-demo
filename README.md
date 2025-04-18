@@ -20,7 +20,7 @@ A simple app to deploy a bot that joins a Google Meet and transcribes it in real
 Set up and run the Google Meet Transcription Demo in minutes.
 
 ### Prerequisites
-- **Recall.ai API Key**: API Key at [recall.ai](https://recall.ai).
+- **Recall.ai API Key**: API Key and Webhook endpoint at [Recall.ai](https://recall.ai).
 - **ngrok**: To expose the backend - [installation guide](https://ngrok.com).
 - **npm**:
 ```bash
@@ -50,15 +50,15 @@ npm intall npm@latest -g
 4. **Create a backend/.env file and enter your API Key**
 
   ```bash
-  echo -e "RECALL_API_KEY=YOUR TOKEN HERE\nWEBHOOK_URL=NGROK URL\nPORT=BACKEND PORT" > backend/.env
+  echo -e "RECALL_API_KEY=YOUR_TOKEN_HERE\nWEBHOOK_URL=NGROK_URL\nPORT=BACKEND_PORT" > backend/.env
    ```
 
   - Your `backend/.env` file should look like this:
 
    ```bash
-    RECALL_API_KEY=YOUR TOKEN HERE
-    WEBHOOK_URL=NGROK URL
-    PORT=BACKEND PORT
+    RECALL_API_KEY=YOUR_TOKEN_HERE
+    WEBHOOK_URL=NGROK_URL
+    PORT=BACKEND_PORT
    ```
 
 5. **Configure ngrok**:
@@ -70,7 +70,7 @@ npm intall npm@latest -g
     ngrok http 3001
    ```
 
-  Note the ngrok URL (e.g., https://a829-36-182-14-382.ngrok-free.app).
+  Note the ngrok URL (e.g. https://1234-56-789-01-234.ngrok-free.app).
 
 ### Running the App
 
