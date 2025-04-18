@@ -27,6 +27,11 @@ Set up and run the Google Meet Transcription Demo in minutes.
 npm intall npm@latest -g
 ```
 
+![Recall API](frontend/public/api.png "Recall API")
+![Recall Webhook step 1](frontend/public/webhook1.png "Recall Webhook step 1")
+![Recall Webhook step 2](frontend/public/webhook2.png "Recall Webhook step 2")
+![Recall Webhook step 3](frontend/public/webhook3.png "Recall Webhook step 3")
+
 ### Installation
 
 1. **Clone the Repository**:
