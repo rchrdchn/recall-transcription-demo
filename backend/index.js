@@ -1,23 +1,28 @@
 require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
-const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
 const app = express();
-const server = http.createServer(app);
+const server = require("http").createServer(app);
 const io = new Server(server, {
-	cors: {
-		origin: "http://localhost:3000",
-		methods: ["GET", "POST"],
-	},
+	cors: { origin: "http://localhost:3000" },
 });
 
 app.use(express.json());
 app.use(cors());
 
-// Endpoint to deploy bot
+// Single Axios instance for Recall.ai API
+const recall = axios.create({
+	baseURL: "https://us-west-2.recall.ai/api/v1",
+	headers: {
+		Authorization: `Token ${process.env.RECALL_API_KEY}`,
+		"Content-Type": "application/json",
+	},
+});
+
+// Deploy bot to Google Meet
 app.post("/deploy-bot", async (req, res) => {
 	const { meeting_url } = req.body;
 	if (!meeting_url) {
@@ -25,60 +30,42 @@ app.post("/deploy-bot", async (req, res) => {
 	}
 
 	try {
-		const response = await axios.post(
-			"https://us-west-2.recall.ai/api/v1/bot",
-			{
-				meeting_url,
-				bot_name: "Jose Notetaker",
+		const response = await recall.post("/bot", {
+			meeting_url,
+			bot_name: "Jose Notetaker",
+			recording_config: {
+				transcript: { provider: { meeting_captions: {} } },
+				realtime_endpoints: [
+					{
+						type: "webhook",
+						url: `${process.env.WEBHOOK_URL}/webhook/transcription`,
+						events: ["transcript.data"],
+					},
+				],
 			},
-			{
-				headers: {
-					Authorization: `Token ${process.env.RECALL_API_KEY}`,
-					"Content-Type": "application/json",
-				},
-			}
-		);
+		});
 		res.json({ bot_id: response.data.id });
 	} catch (error) {
-		console.error(
-			"Error deploying bot:",
-			error.response?.data || error.message
-		);
 		res.status(500).json({ error: "Failed to deploy bot" });
 	}
 });
 
-// Webhook endpoint for transcription data
+// Handle transcription webhooks
 app.post("/webhook/transcription", (req, res) => {
-	console.log("Webhook received:", req.body);
-	const { words, speaker, language } = req.body;
-
-	if (!words || !Array.isArray(words) || words.length === 0) {
-		console.warn("No valid transcription data in webhook payload");
-		return res.sendStatus(200);
+	const transcriptData = req.body.data?.data || {};
+	if (!transcriptData.words || !Array.isArray(transcriptData.words)) {
+		return res.status(200).json({});
 	}
 
-	try {
-		const transcript = {
-			speaker: speaker || "Unknown",
-			text: words.map((w) => w.text).join(" "),
-			timestamp: words[0].start_time || 0,
-		};
-		io.emit("transcript", transcript);
-		console.log("Emitted transcript:", transcript);
-	} catch (error) {
-		console.error("Error processing webhook payload:", error.message);
-	}
-
-	res.sendStatus(200);
+	const transcript = {
+		speaker: transcriptData.participant?.name || "Unknown",
+		text: transcriptData.words.map((w) => w.text).join(" "),
+		timestamp: transcriptData.words[0].start_timestamp?.relative || 0,
+	};
+	io.emit("transcript", transcript);
+	res.status(200).json({});
 });
 
-// Socket.IO connection
-io.on("connection", (socket) => {
-	console.log("Frontend connected");
-});
-
-const PORT = process.env.PORT || 3001;
-server.listen(PORT, () => {
-	console.log(`Backend running on port ${PORT}`);
+server.listen(process.env.PORT || 3001, () => {
+	console.log("Server running on port 3001");
 });
