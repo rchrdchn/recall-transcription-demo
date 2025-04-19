@@ -34,6 +34,8 @@ npm intall npm@latest -g
 #### Recall API Key
 
 ![Recall API](frontend/public/api.png "Recall API")
+![Recall API](frontend/public/api2.png "Recall API")
+![Recall API](frontend/public/api3.png "Recall API")
 
 #### Recall Webhook
 
