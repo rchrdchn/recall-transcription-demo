@@ -78,8 +78,8 @@ npm intall npm@latest -g
 
 
 ### Recall API Key
-- Go to [Recall.ai](https://recall.ai) and create a new API Key
-- Copy and replace `YOUR_TOKEN_HERE` in `RECALL_API_KEY=YOUR_TOKEN_HERE`
+- Go to [Recall.ai](https://recall.ai) and create a new API key
+- Copy and replace `YOUR_TOKEN_HERE` in `RECALL_API_KEY=YOUR_TOKEN_HERE` with your newly created API key
 
 ![Recall API](frontend/public/api.png "Recall API")
 ![Recall API](frontend/public/api2.png "Recall API")
@@ -94,16 +94,24 @@ npm intall npm@latest -g
 ![Recall Webhook step 2](frontend/public/webhook2.png "Recall Webhook step 2")
 ![Recall Webhook step 3](frontend/public/webhook3.png "Recall Webhook step 3")
 
-### Running the App
+## Running the App
 
-1. **Launch the Backend**:
+1. By now, your `backend/.env` file should have the `RECALL_API_KEY`, `WEBHOOK_URL`, and `PORT` values like this example:
+
+   ```bash
+    RECALL_API_KEY=ccbd044a1c7ffe8fc716efb3b8c95a94
+    WEBHOOK_URL=https://1234-56-789-01-234.ngrok-free.app
+    PORT=3001
+   ```
+
+2. **Launch the Backend**:
 
    ```bash
     cd ../backend
     node index.js
    ```
 
-2. **Launch the Frontend**:
+3. **Launch the Frontend**:
 
    ```bash
     cd ../frontend
@@ -114,14 +122,15 @@ npm intall npm@latest -g
 
 ## Demo
 
-1. Go to http://localhost:3000.
-2. Enter a Google Meet URL (e.g., https://meet.google.com/abc-defg-hij).
-3. Click “Deploy Bot”.
-4. Join the Google Meet and admit the bot.
-5. Watch live transcripts appear in the [app](http://localhost:3000/).
-6. Save transcripts as `transcript.txt` or clear them when done.
+1. Start a [Google Meet](http://meet.new/)
+2. Go to http://localhost:3000.
+3. Enter a Google Meet URL (e.g., https://meet.google.com/abc-defg-hij).
+4. Click “Deploy Bot”.
+5. Join the Google Meet and admit the bot.
+6. Watch live transcripts appear in the [app](http://localhost:3000/).
+7. Save transcripts as `transcript.txt` or clear them when done.
 
-### Features
+## Features
 
 - Deploy bot to join Google Meet.
 - Transcribes meeting in real-time.
