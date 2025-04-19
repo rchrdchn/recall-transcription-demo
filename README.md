@@ -2,6 +2,10 @@
 
 ![Google Meet Real-Time Transcription Bot](frontend/public/demo.png "Google Meet Real-Time Transcription Bot")
 
+- [**Loom demo walkthrough**](https://www.loom.com/share/85eaab3a06e34665832e42769974fdfa?sid=4ac404a4-8932-4bf1-9a2d-81d7475e393d)
+- [**Blog post tutorial**](https://docs.google.com/document/d/1y_ftakJSWyB6PH-ETm824ZRIVGAbzppdmxJM45G5XVU/edit?usp=sharing)
+
+
 ## About The Project
 
 A simple app to deploy a bot that joins a Google Meet and transcribes it in real-time. Built with React, Node.js, and Recall.ai, it’s perfect for developers exploring programmatic transcription for notetaking tools.
@@ -60,7 +64,7 @@ npm intall npm@latest -g
 4. **Create a backend/.env file and enter your API Key**
 
   ```bash
-  echo -e "RECALL_API_KEY=YOUR_TOKEN_HERE\nWEBHOOK_URL=NGROK_URL\nPORT=BACKEND_PORT" > backend/.env
+  echo -e "RECALL_API_KEY=YOUR_TOKEN_HERE\nWEBHOOK_URL=NGROK_URL\nPORT=BACKEND_PORT" > ../backend/.env
    ```
 
   - Your `backend/.env` file should look like this:
@@ -87,7 +91,7 @@ npm intall npm@latest -g
 1. **Launch the Backend**:
 
    ```bash
-    cd backend
+    cd ../backend
     node index.js
    ```
 
