@@ -24,24 +24,12 @@ A simple app to deploy a bot that joins a Google Meet and transcribes it in real
 Set up and run the Google Meet Transcription Demo in minutes.
 
 ### Prerequisites
+- **Recall.ai**: API Key and Webhook endpoint at [Recall.ai](https://recall.ai).
+- **ngrok**: To expose the backend - [installation guide](https://ngrok.com).
 - **npm**:
 ```bash
 npm intall npm@latest -g
 ```
-- **ngrok**: To expose the backend - [installation guide](https://ngrok.com).
-- **Recall.ai**: API Key and Webhook endpoint at [Recall.ai](https://recall.ai).
-
-#### Recall API Key
-
-![Recall API](frontend/public/api.png "Recall API")
-![Recall API](frontend/public/api2.png "Recall API")
-![Recall API](frontend/public/api3.png "Recall API")
-
-#### Recall Webhook
-
-![Recall Webhook step 1](frontend/public/webhook1.png "Recall Webhook step 1")
-![Recall Webhook step 2](frontend/public/webhook2.png "Recall Webhook step 2")
-![Recall Webhook step 3](frontend/public/webhook3.png "Recall Webhook step 3")
 
 ### Installation
 
@@ -87,6 +75,24 @@ npm intall npm@latest -g
    ```
 
   Note the ngrok URL (e.g. https://1234-56-789-01-234.ngrok-free.app).
+
+
+### Recall API Key
+- Go to [Recall.ai](https://recall.ai) and create a new API Key
+- Copy and replace `YOUR_TOKEN_HERE` in `RECALL_API_KEY=YOUR_TOKEN_HERE`
+
+![Recall API](frontend/public/api.png "Recall API")
+![Recall API](frontend/public/api2.png "Recall API")
+![Recall API](frontend/public/api3.png "Recall API")
+
+### Recall Webhook
+- Copy the ngrok URL from the previous step
+- Add a new webhook endpoint in the [Recall.ai](https://recall.ai) dashboard, under Webhooks
+- It should look like this: `https://1234-56-789-01-234.ngrok-free.app/webhook/transcription`
+
+![Recall Webhook step 1](frontend/public/webhook1.png "Recall Webhook step 1")
+![Recall Webhook step 2](frontend/public/webhook2.png "Recall Webhook step 2")
+![Recall Webhook step 3](frontend/public/webhook3.png "Recall Webhook step 3")
 
 ### Running the App
 
